@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "StaticPages" do
-  let(:sitename) { "Tutorial: Ruby On Rails Sample App | "}
+  let(:sitename) { "Tutorial: Ruby On Rails Sample App"}
 
   describe "Home page" do
     it "should have the content 'Sample App'" do
@@ -11,8 +11,14 @@ describe "StaticPages" do
   
     it "should have the right title" do
       visit '/static_pages/home'
-      expect(page).to have_title(sitename + "Home")
+      expect(page).to have_title(sitename)
     end
+
+    it "should not have the a custom page title" do
+      visit '/static_pages/home'
+      expect(page).not_to have_title("| Home")
+    end
+    
   end
 
   describe "Help page" do
@@ -23,7 +29,7 @@ describe "StaticPages" do
 
     it "should have the right title" do
       visit '/static_pages/help'
-      expect(page).to have_title(sitename + "Help")
+      expect(page).to have_title(sitename + " | Help")
     end
   end
 
@@ -35,7 +41,7 @@ describe "StaticPages" do
 
     it "should have the right title" do
       visit '/static_pages/about'
-      expect(page).to have_title(sitename + "About")
+      expect(page).to have_title(sitename + " | About")
     end
   end
 
@@ -47,7 +53,7 @@ describe "StaticPages" do
 
     it "should have the right title" do
       visit '/static_pages/contact'
-      expect(page).to have_title(sitename + "Contact")
+      expect(page).to have_title(sitename + " | Contact")
     end
   end
 end
