@@ -5,17 +5,17 @@ describe "StaticPages" do
 
   describe "Home page" do
     it "should have the content 'Sample App'" do
-      visit '/static_pages/home'    # use of Capybara function 'visit' to simpulate visiting URL
+      visit '/'    # use of Capybara function 'visit' to simpulate visiting URL
       expect(page).to have_content('Sample App')  # use the 'page' variable in Capybara  
     end
   
     it "should have the right title" do
-      visit '/static_pages/home'
+      visit '/'
       expect(page).to have_title(sitename)
     end
 
     it "should not have the a custom page title" do
-      visit '/static_pages/home'
+      visit '/'
       expect(page).not_to have_title("| Home")
     end
     
@@ -23,36 +23,36 @@ describe "StaticPages" do
 
   describe "Help page" do
     it "should have the content 'Help'" do
-      visit '/static_pages/help'
+      visit '/help'
       expect(page).to have_content('Help')
     end
 
     it "should have the right title" do
-      visit '/static_pages/help'
+      visit '/help'
       expect(page).to have_title(sitename + " | Help")
     end
   end
 
   describe "About page" do
     it "should have the content 'About Us'" do
-      visit '/static_pages/about'
+      visit '/about'
       expect(page).to have_content('About Us')
     end
 
     it "should have the right title" do
-      visit '/static_pages/about'
+      visit '/about'
       expect(page).to have_title(sitename + " | About")
     end
   end
 
   describe "Contact page" do
     it "should have the content 'Contact Me'" do
-      visit '/static_pages/contact'
+      visit '/contact'
       expect(page).to have_content('Contact Me')
     end
 
     it "should have the right title" do
-      visit '/static_pages/contact'
+      visit '/contact'
       expect(page).to have_title(sitename + " | Contact")
     end
   end

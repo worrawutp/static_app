@@ -1,8 +1,7 @@
-@import "bootstrap-sprockets";
 @import "bootstrap";
 
 /* mixins, variables, etc */
-%gray-medium-light: #eaeaea;
+$gray-medium-light: #eaeaea;
 
 /*	universal */
 html {
